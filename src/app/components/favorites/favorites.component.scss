@@ -1,0 +1,14 @@
+@import "~src/sass/variables";
+@import "~src/sass/mixins";
+@import "~src/sass/utilities";
+
+mat-header-cell.mat-header-cell {
+  font-size: 1rem;
+}
+
+mat-header-cell.mat-header-cell:nth-child(3) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}

@@ -1,0 +1,73 @@
+<div class="film_info">
+  <div class="container">
+    <flash-messages></flash-messages>
+    <div
+      class="film_info_showcase_container"
+      [ngStyle]="{
+        background:
+          'url(' + film_info?.bg_img_url + ') no-repeat center center/cover'
+      }"
+    >
+      <div class="film_info_showcase">
+        <div class="film_info_first_col">
+          <img src="{{ film_info?.img_url }}" alt="poster is absent" />
+          <button
+            (click)="addOrRemoveFavorite()"
+            mat-raised-button
+            color="white"
+          >
+            {{ btn_state.text }}<mat-icon>{{ btn_state.icon_name }}</mat-icon>
+          </button>
+        </div>
+        <div class="film_info_sec_col app_header">
+          <h2>{{ film_info?.title }}</h2>
+          <h3>{{ film_info?.tagline }}</h3>
+          <h4 class="bold">About film</h4>
+          <div>Genre: {{ film_info.genres }}</div>
+          <div>Language: {{ film_info?.original_language }}</div>
+          <div>Runtime: {{ film_info?.runtime }} min</div>
+          <div>Budget: {{ film_info?.budget | currency: "USD" }}</div>
+          <div>Countries: {{ film_info.production_countries }}</div>
+          <div>Release date: {{ film_info?.release_date | date }}</div>
+          <div>Status: {{ film_info?.status }}</div>
+        </div>
+        <div class="film_info_third_col app_header">
+          <div class="rating">
+            <div class="digit_rating">
+              <span class="ratio">
+                <span class="vote_average">{{ film_info?.vote_average }}</span
+                >/10
+              </span>
+              <span class="vote_count">{{ film_info?.vote_count }}</span>
+            </div>
+
+            <div class="rating_string">
+              <span style="width: {{ film_info?.vote_average * 10 }}%;"></span>
+            </div>
+          </div>
+          <div class="production_companies">
+            <h3 class="app_header">Production companies:</h3>
+            <div *ngFor="let company of film_info.production_companies">
+              {{ company }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="film_info_overview">
+      <h1 class="app_header">Overview</h1>
+      <p>{{ film_info?.overview }}</p>
+    </div>
+    <div class="film_info_rec_list">
+      <h1 class="app_header">Recommendations list</h1>
+      <div class="film_info_rec_list_cont">
+        <div class="rec_film" *ngFor="let film of film_info.recommendations">
+          <img src="{{ film?.poster_path }}" alt="" />
+          <button (click)="onRecFilmClick(film?.id)">
+            {{ film?.title }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

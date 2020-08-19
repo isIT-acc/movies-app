@@ -1,0 +1,27 @@
+@import "~src/sass/utilities";
+@import "~src/sass/mixins";
+@import "~src/sass/variables";
+
+h1 {
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: $grey;
+  align-items: center;
+  padding: 1rem 0;
+  border-radius: 5px;
+  .logo {
+    font-size: 2rem;
+  }
+  .menu_item {
+    margin-right: 4rem;
+    border-bottom: solid 2px $grey;
+  }
+  .menu_item:hover {
+    border-bottom: solid 2px $black;
+  }
+}

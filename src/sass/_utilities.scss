@@ -1,0 +1,38 @@
+@import "./variables";
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.uppercase_text {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.added {
+  background: red;
+  background: rgba(0, 128, 0, 0.1);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+.removed {
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.app_header {
+  margin-top: $common_top_margin !important;
+}

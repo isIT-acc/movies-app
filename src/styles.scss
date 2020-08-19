@@ -1,0 +1,12 @@
+@import "./sass/variables";
+@import "./sass/mixins";
+@import "./sass/utilities";
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
